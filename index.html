@@ -1,82 +1,100 @@
+
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
+    <meta name="description" content="focalors.space, Самый главный симп Фурины/Фокалорс JkarimS!">
+    <meta name="yandex-verification" content="88500b833f0ceae9">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FKS - Freaking Kazakh Students</title>
+    <title>Выбор профиля</title>
     <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
+            background-color: #222;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            zoom: 1;
+            transition: zoom 0.5s ease-in-out; /* Плавное изменение масштаба */
         }
-        header {
-            background-color: #1f1f1f;
-            padding: 10px 20px;
-            text-align: center;
-            border-radius: 5px;
+
+        #background-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Fontaine';
+            font-size: 150px;
+            color: rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+            z-index: -1;
+            display: none; /* Скрыть текст до загрузки шрифта */
         }
+
         h1 {
-            margin: 0;
+            color: #ccc;
+            z-index: 1;
         }
-        nav {
-            margin: 20px 0;
+
+        .profile-buttons {
+            margin-top: 20px; /* Увеличиваем отступ между заголовком и кнопками */
         }
-        nav a {
-            color: #00bcd4;
+
+        .profile-button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 16px;
             text-decoration: none;
-            margin: 0 10px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            margin: 20px 0;
-            background-color: #1f1f1f;
-            padding: 15px;
+            color: #fff;
+            background-color: #3498db;
             border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Добавляем плавное изменение цвета фона при наведении */
         }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: #999;
+
+        .profile-button:hover {
+            background-color: #2e86c1; /* Изменяем цвет фона при наведении */
+        }
+
+        .roblox { background-color: #e74c3c; }
+        .discord { background-color: #7289da; }
+        .telegram { background-color: #0088cc; }
+
+        @media (max-width: 768px) {
+            body {
+                zoom: 0.8; /* Уменьшаем масштаб */
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Freaking Kazakh Students</h1>
-        <nav>
-            <a href="#about">О нас</a>
-            <a href="#projects">Проекты</a>
-            <a href="#contact">Контакты</a>
-        </nav>
-    </header>
+    <div id="background-text">Farewell...</div>
 
-    <section id="about">
-        <h2>О нас</h2>
-        <p>Студенты из казахстана, в нашей команде: Карим - разработчик, Чингиз - кошелек, Данька - встанька</p>
-    </section>
+    <h1>Выберите профиль:</h1>
 
-    <section id="projects">
-        <h2>Проекты</h2>
-        <p>Мы работаем над несколькими проектами, включая:</p>
-        <ul>
-            <li>Сайт расписания для колледжа</li>
-            <li>Хз</li>
-        </ul>
-    </section>
+    <div class="profile-buttons">
+        <a href="https://www.roblox.com/share?code=52b54ad6c9ef1540a86b591c00760ae2&amp;type=Profile" target="_blank" class="profile-button roblox"><b>Roblox</b></a>
+        <a href="https://discordapp.com/users/649244006177570837" target="_blank" class="profile-button discord"><b>Discord</b></a>
+        <a href="https://t.me/JkarimS" target="_blank" class="profile-button telegram"><b>Telegram</b></a>
+    </div>
 
-    <section id="contact">
-        <h2>Контакты</h2>
-        <p>Свяжитесь с нами: <a href="https://link.focalors.space">link.focalors.space</a></p>
-    </section>
+    <script>
+        const fontaineFont = new FontFace('Fontaine', 'url(fontaine.ttf)');
 
-    <footer>
-        <p>&copy; 2024 Freaking Kazakh Students. Все права защищены.</p>
-    </footer>
+        fontaineFont.load().then((loadedFont) => {
+            document.fonts.add(loadedFont);
+            document.getElementById('background-text').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
